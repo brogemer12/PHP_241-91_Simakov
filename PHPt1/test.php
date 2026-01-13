@@ -1,18 +1,9 @@
 <?php
-    $text = "Это пример текста для демонстрации работы счетчика слов";
-    
-    // 1. Разбиваем строку на массив слов по пробелу
-    $words = explode(' ', $text);
-    
-    $counter = 0; // Общий счетчик слов (не обязательно, но полезно)
-    $second_word_counter = 0; // Счетчик для каждого второго слова
-    foreach ($words as $index => $word) {
-        $counter++; // Увеличиваем общий счетчик
-    
-        // Проверяем, является ли индекс нечетным (0-based), то есть это второе, четвертое и т.д. слово
-        if ($index % 2 == 1) {
-            $second_word_counter++; // Увеличиваем счетчик для второго слова
-            echo $word. "\n";
-        }
+    $a = ["1.txt", "2.txt", "3.txt"];
+    foreach($a as $e){
+        $text = file_put_contents(file_get_contents($e), 1);
+        file_put_contents(file_get_contents($e), $text.'!');
+        echo file_get_contents(file_get_contents($e));
     }
+    
 ?>
