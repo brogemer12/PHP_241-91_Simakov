@@ -13,19 +13,12 @@
 </body>
 </html>
 <?php
+    $XVI="Иван Васильевич";
+    $XVIII="Пётр Алексеевич";
+    $XIX="Николай Павлович";
     if(isset($_GET['Input'])){
-        $a = explode(' ', $_GET['Input']);
-
-        function Preobraz(&$arr){
-            for($i = 0; $i < count($arr); $i++){
-                if(($i % 2) > 0){
-                    $arr[$i] = mb_strtoupper($arr[$i]);
-                }
-            }
-        }
-        Preobraz($a);
-        $str = implode(' ', $a);
-        echo $str;
+        $vek = $_GET['Input'];
+        echo 'В '.$vek.' веке царствовал '.$$vek;
     }
 ?>
 
